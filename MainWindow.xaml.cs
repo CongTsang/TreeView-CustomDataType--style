@@ -16,34 +16,6 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// 可视化树节点的结构定义
-    /// </summary>
-    public class TreeViewItemIPU
-    {
-        private string _treeViewItemName;
-        public string TreeViewItemName
-        {
-            get { return _treeViewItemName; }
-            set { _treeViewItemName = value; }
-        }
-        private List<TreeViewItemIPU> _children = new List<TreeViewItemIPU>();
-        public List<TreeViewItemIPU> Children
-        {
-            get
-            {
-                return _children;
-            }
-            set
-            {
-                if (value != _children)
-                {
-                    _children = value;
-                }
-            }
-        }
-
-    }
-    /// <summary>
     /// 判断是否是构造当前层的最后一个元素
     /// </summary>
     public class TreeViewLineConverter : IValueConverter
@@ -55,7 +27,6 @@ namespace WpfApp2
             //System.Console.WriteLine(ic.Items.Count + "  " + item.Header.ToString());
             return ic.ItemContainerGenerator.IndexFromContainer(item) == ic.Items.Count - 1;
         }
-
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
